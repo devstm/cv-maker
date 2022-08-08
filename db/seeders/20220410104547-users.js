@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const faker = require('@faker-js/faker');
 
-const users = [...Array(50)].map((_, i) => ({
+const users = [...Array(100)].map((_, i) => ({
   email: faker.faker.internet.email(),
   username: faker.faker.internet.userName(),
   password: faker.faker.internet.password(8),

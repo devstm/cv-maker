@@ -31,11 +31,8 @@ export class AuthGuards implements CanActivate {
     if (!decoded) {
       return false;
     }
-
-    const userFromDb = await this.userService.checkIfUserExist(
-      decoded,
-      'User not found',
-    );
+    console.log(decoded);
+    const userFromDb = await this.userService.checkIfUser(decoded);
 
     if (!userFromDb) {
       return false;

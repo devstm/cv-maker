@@ -9,8 +9,8 @@ export const verifyToken = (token, secret) =>
     return decode;
   });
 
-export const generateToken = (userName: string) => {
-  return jwt.sign({ userName }, SYSTEM.SECRET, {
+export const generateToken = (username: string) => {
+  return jwt.sign({ username }, SYSTEM.SECRET, {
     expiresIn: '8h',
   });
 };

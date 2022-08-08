@@ -46,7 +46,7 @@ export class UserService {
     if (username.includes('@')) {
       where.email = username;
     } else {
-      where.userName = username;
+      where.username = username;
     }
     const user = await this.usersRepository.findOne({
       where: {
@@ -76,7 +76,7 @@ export class UserService {
       user: {
         id: newUser.id,
         email: newUser.email,
-        userName: newUser.username,
+        username: newUser.username,
       },
       token: generateToken(newUser.username),
     };
@@ -101,7 +101,7 @@ export class UserService {
         user: {
           id: user.id,
           email: user.email,
-          userName: user.username,
+          username: user.username,
         },
         token: generateToken(user.username),
       };

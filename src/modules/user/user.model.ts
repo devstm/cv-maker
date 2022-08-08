@@ -6,7 +6,9 @@ import {
   PrimaryKey,
   AutoIncrement,
   Unique,
+  HasMany,
 } from 'sequelize-typescript';
+import { Profiles } from '../profile/entities/profile.model';
 
 @Table({
   tableName: 'Users',
@@ -46,4 +48,7 @@ export class Users extends Model {
 
   @Column(DataType.STRING)
   deletedBy: string;
+
+  @HasMany(() => Profiles)
+  profiles: Profiles[];
 }
